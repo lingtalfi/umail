@@ -818,7 +818,7 @@ echo file_get_contents(__DIR__ . '/transparent.gif');
 
 Dependencies
 ----------------
-- [lingtalfi/DirScanner 1.3.0](https://github.com/lingtalfi/DirScanner)
+- [lingtalfi/DirScanner 1.3.0](https://github.com/lingtalfi/DirScanner): only if you use the mail-viewer script
 
 
 
