@@ -828,6 +828,10 @@ Dependencies
 History Log
 ------------------
     
+- 1.2.0 -- 2017-05-29
+
+    - FileTemplateLoader: some variables are now protected instead of private
+    
 - 1.1.1 -- 2017-02-17
 
     - forgot files from last commit
