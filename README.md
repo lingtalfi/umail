@@ -210,7 +210,7 @@ There is a default template loader (which explains why the code below works): th
 
 By default, the FileTemplateLoader will try to find a template file in the "mails" directory at the root 
 of the application.
-With FileTemplateLoader,yYou can have a template for both html and/or plain versions.
+With FileTemplateLoader,you can have a template for both html and/or plain versions.
 
 A template file ending with ".html" will be a template for the html version, while a template
 ending with ".txt" will be a template for the plain text version.
