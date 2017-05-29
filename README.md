@@ -28,7 +28,10 @@ Example 1: send an email
 --------------------------
 
 Note: I tested this example on 2017-02-06, and it worked 
-on my local machine (macbook pro). However, it failed on my iMac (gate timeout error).
+on my local machine (macbook pro). However, it failed on my iMac (late 2009)(gate timeout error).
+
+Note2: retested on my new iMac (late 2015), it works fine.
+
 
 In other words, if your machine allows it, you can send emails without using smtp settings (username, password, ...).
 
