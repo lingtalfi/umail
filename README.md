@@ -828,6 +828,10 @@ Dependencies
 History Log
 ------------------
     
+- 1.2.1 -- 2017-07-02
+
+    - Umail fix "to" method not resetting correctly 
+    
 - 1.2.0 -- 2017-05-29
 
     - FileTemplateLoader: some variables are now protected instead of private

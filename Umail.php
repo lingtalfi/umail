@@ -117,18 +117,15 @@ class Umail implements UmailInterface
         return $this->message;
     }
 
+    /**
+     * This method should be called only once per "mail sending session"
+     */
     public function to($recipients, $batchMode = true)
     {
         if (is_string($recipients)) {
-            $this->toRecipients[] = $recipients;
+            $this->toRecipients = [$recipients];
         } elseif (is_array($recipients)) {
-            foreach ($recipients as $k => $v) {
-                if (is_string($k)) {
-                    $this->toRecipients[$k] = $v;
-                } else {
-                    $this->toRecipients[] = $v;
-                }
-            }
+            $this->toRecipients = $recipients;
         }
         $this->isBatchMode = $batchMode;
         return $this;
@@ -245,7 +242,6 @@ class Umail implements UmailInterface
              * batch mode, each recipient receives its own mail copy,
              * and the "to" field only contains the recipient address
              */
-
             foreach ($this->toRecipients as $k => $v) {
 
                 try {
