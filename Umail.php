@@ -77,6 +77,7 @@ class  Umail implements UmailInterface
      * @var \RendererInterface $renderer
      */
     private $renderer;
+    private $transport;
 
 
     public function __construct()
@@ -316,6 +317,15 @@ class  Umail implements UmailInterface
         return $this;
     }
 
+    public function setTransport($transport)
+    {
+        $this->transport = $transport;
+        return $this;
+    }
+
+
+
+
     //------------------------------------------------------------------------------/
     //
     //------------------------------------------------------------------------------/
@@ -324,12 +334,10 @@ class  Umail implements UmailInterface
      */
     protected function getTransport()
     {
+        if (null !== $this->transport) {
+            return $this->transport;
+        }
         return \Swift_MailTransport::newInstance();
-//        return (new \Swift_SmtpTransport('smtp.mycompany.com', 25))
-//            ->setUsername('somebody@mycompany.com')
-//            ->setPassword('password')
-//        ;
-
     }
 
     protected function getTemplateLoader()
