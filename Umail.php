@@ -11,7 +11,7 @@ use Umail\TemplateLoader\FileTemplateLoader;
 use Umail\TemplateLoader\TemplateLoaderInterface;
 use Umail\VarLoader\VarLoaderInterface;
 
-class Umail implements UmailInterface
+class  Umail implements UmailInterface
 {
 
     /**
@@ -325,6 +325,11 @@ class Umail implements UmailInterface
     protected function getTransport()
     {
         return \Swift_MailTransport::newInstance();
+//        return (new \Swift_SmtpTransport('smtp.mycompany.com', 25))
+//            ->setUsername('somebody@mycompany.com')
+//            ->setPassword('password')
+//        ;
+
     }
 
     protected function getTemplateLoader()
