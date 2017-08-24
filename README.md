@@ -828,6 +828,10 @@ Dependencies
 History Log
 ------------------
     
+- 1.3.0 -- 2017-08-24
+
+    - add Umail.setTransport method 
+    
 - 1.2.1 -- 2017-07-02
 
     - Umail fix "to" method not resetting correctly 
