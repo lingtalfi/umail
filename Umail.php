@@ -74,7 +74,7 @@ class  Umail implements UmailInterface
     private $fileIsPath;
 
     /**
-     * @var \RendererInterface $renderer
+     * @var RendererInterface $renderer
      */
     private $renderer;
 
@@ -325,11 +325,6 @@ class  Umail implements UmailInterface
     protected function getTransport()
     {
         return \Swift_MailTransport::newInstance();
-//        return (new \Swift_SmtpTransport('smtp.mycompany.com', 25))
-//            ->setUsername('somebody@mycompany.com')
-//            ->setPassword('password')
-//        ;
-
     }
 
     protected function getTemplateLoader()
