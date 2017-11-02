@@ -58,7 +58,8 @@ a($res);
 ```
 
 
-If the above code doesn't work right away, you might want to set a transport:
+I've been testing the above code with success on my computer, although the message went directly in the junk.
+You might want to set a transport to make your messages more trustworthy:
 
 ```php
 $transport = (new Swift_SmtpTransport('smtp.example.org', 25, 'ssl'))
