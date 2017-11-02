@@ -44,7 +44,6 @@ use Umail\Umail;
 
 require_once __DIR__ . "/../init.php";
 
-
 //------------------------------------------------------------------------------/
 // SEND SIMPLE MAIL
 //------------------------------------------------------------------------------/
@@ -57,6 +56,21 @@ $res = Umail::create()
     ->send();
 a($res);
 ```
+
+
+If the above code doesn't work right away, you might want to set a transport:
+
+```php
+$transport = (new Swift_SmtpTransport('smtp.example.org', 25, 'ssl'))
+    ->setUsername('your username')
+    ->setPassword('your password')
+;
+
+$res = Umail::create()
+->setTransport($transport); 
+```
+
+
 
 
 
