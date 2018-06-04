@@ -11,7 +11,7 @@ use Umail\TemplateLoader\FileTemplateLoader;
 use Umail\TemplateLoader\TemplateLoaderInterface;
 use Umail\VarLoader\VarLoaderInterface;
 
-class  Umail implements UmailInterface
+class  UmailOld implements UmailInterface
 {
 
     /**
@@ -65,14 +65,13 @@ class  Umail implements UmailInterface
     private $_subject;
 
     /**
-     * each file is an array:
-     * - 0: $file, string, the path to the file
-     * - ?1: $fileName
-     * - ?2: $fileMimeType
-     * - ?3: $fileInline
-     * - ?4: $fileIsPath: bool=true
+     * $file, $fileName, $fileMimeType, $fileInline: file attachment related vars
      */
-    private $files;
+    private $file;
+    private $fileName;
+    private $fileMimeType;
+    private $fileInline;
+    private $fileIsPath;
 
     /**
      * @var RendererInterface $renderer
@@ -94,7 +93,6 @@ class  Umail implements UmailInterface
         $this->hooks = [];
         $this->toRecipients = [];
         $this->commonVars = [];
-        $this->files = [];
         $this->isBatchMode = true;
         $this->varRefWrapper = function ($var) {
             return '{' . $var . '}';
@@ -210,13 +208,11 @@ class  Umail implements UmailInterface
 
     public function attachFile($file, $fileName = null, $mimeType = null, $inline = false, $isFilePath = true)
     {
-        $this->files[] = [
-            $file,
-            $fileName,
-            $mimeType,
-            $inline,
-            $isFilePath,
-        ];
+        $this->file = $file;
+        $this->fileName = $fileName;
+        $this->fileMimeType = $mimeType;
+        $this->fileInline = $inline;
+        $this->fileIsPath = $isFilePath;
         return $this;
     }
 
@@ -434,29 +430,19 @@ class  Umail implements UmailInterface
             $this->message->setSubject($subjectText);
         }
 
-        if ($this->files) {
-
-            foreach ($this->files as $fileInfo) {
-
-                list($file,
-                    $fileName,
-                    $mimeType,
-                    $inline,
-                    $isFilePath) = $fileInfo;
-
-                if (true === $isFilePath) {
-                    $attachment = \Swift_Attachment::fromPath($file, $mimeType);
-                    if (null !== $fileName) {
-                        $attachment->setFilename($fileName);
-                    }
-                } else {
-                    $attachment = \Swift_Attachment::newInstance($file, $fileName, $mimeType);
+        if (null !== $this->file) {
+            if (true === $this->fileIsPath) {
+                $attachment = \Swift_Attachment::fromPath($this->file, $this->fileMimeType);
+                if (null !== $this->fileName) {
+                    $attachment->setFilename($this->fileName);
                 }
-                if (true === $inline) {
-                    $attachment->setDisposition('inline');
-                }
-                $this->message->attach($attachment);
+            } else {
+                $attachment = \Swift_Attachment::newInstance($this->file, $this->fileName, $this->fileMimeType);
             }
+            if (true === $this->fileInline) {
+                $attachment->setDisposition('inline');
+            }
+            $this->message->attach($attachment);
         }
 
         /**
