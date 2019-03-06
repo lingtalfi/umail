@@ -1,6 +1,6 @@
 <?php
 
-namespace Umail\Renderer;
+namespace Ling\Umail\Renderer;
 
 interface RendererInterface
 {

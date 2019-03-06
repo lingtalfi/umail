@@ -14,7 +14,7 @@ Install
 ==========
 Using the [uni](https://github.com/lingtalfi/universe-naive-importer) command.
 ```bash
-uni import Umail
+uni import Ling/Umail
 ```
 
 It also uses [SwiftMailer](http://swiftmailer.org/) library, which you need to install separately.
@@ -52,7 +52,7 @@ In other words, if your machine allows it, you can send emails without using smt
 <?php
 
 
-use Umail\Umail;
+use Ling\Umail\Umail;
 
 require_once __DIR__ . "/../init.php";
 
@@ -542,7 +542,7 @@ It probably works with other mail clients as well.
 <?php
 
 
-use Umail\Umail;
+use Ling\Umail\Umail;
 
 require_once __DIR__ . "/../init.php";
 

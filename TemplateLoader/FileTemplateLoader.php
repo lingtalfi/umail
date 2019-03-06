@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Umail\TemplateLoader;
+namespace Ling\Umail\TemplateLoader;
 
 /**
  * This loader loads templates from filesystem files.

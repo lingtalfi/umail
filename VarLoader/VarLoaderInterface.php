@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Umail\VarLoader;
+namespace Ling\Umail\VarLoader;
 
 
 interface VarLoaderInterface

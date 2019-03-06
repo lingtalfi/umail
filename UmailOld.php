@@ -1,15 +1,15 @@
 <?php
 
 
-namespace Umail;
+namespace Ling\Umail;
 
 
-use Umail\Exception\UmailException;
-use Umail\Renderer\Renderer;
-use Umail\Renderer\RendererInterface;
-use Umail\TemplateLoader\FileTemplateLoader;
-use Umail\TemplateLoader\TemplateLoaderInterface;
-use Umail\VarLoader\VarLoaderInterface;
+use Ling\Umail\Exception\UmailException;
+use Ling\Umail\Renderer\Renderer;
+use Ling\Umail\Renderer\RendererInterface;
+use Ling\Umail\TemplateLoader\FileTemplateLoader;
+use Ling\Umail\TemplateLoader\TemplateLoaderInterface;
+use Ling\Umail\VarLoader\VarLoaderInterface;
 
 class  UmailOld implements UmailInterface
 {

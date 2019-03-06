@@ -1,6 +1,6 @@
 <?php
 
-namespace Umail\Renderer;
+namespace Ling\Umail\Renderer;
 
 abstract class AbstractRenderer implements RendererInterface
 {

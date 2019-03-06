@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Umail\TemplateLoader;
+namespace Ling\Umail\TemplateLoader;
 
 
 interface TemplateLoaderInterface

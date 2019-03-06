@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Umail\Exception;
+namespace Ling\Umail\Exception;
 
 
 class UmailException extends \Exception

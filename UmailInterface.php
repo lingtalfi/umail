@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Umail;
+namespace Ling\Umail;
 
 
-use Umail\Exception\UmailException;
-use Umail\Renderer\RendererInterface;
-use Umail\TemplateLoader\TemplateLoaderInterface;
+use Ling\Umail\Exception\UmailException;
+use Ling\Umail\Renderer\RendererInterface;
+use Ling\Umail\TemplateLoader\TemplateLoaderInterface;
 
 
 /**
