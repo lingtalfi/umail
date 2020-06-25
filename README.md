@@ -1,6 +1,6 @@
 Umail
 ============
-2017-02-06 --> 2017-02-07
+2017-02-06 --> 2020-06-25
 
 
 
@@ -17,7 +17,7 @@ Using the [uni](https://github.com/lingtalfi/universe-naive-importer) command.
 uni import Ling/Umail
 ```
 
-It also uses [SwiftMailer](http://swiftmailer.org/) library, which you need to install separately.
+It also uses [SwiftMailer](http://swiftmailer.org/) library under the hood.
 
 
 
@@ -854,6 +854,10 @@ Dependencies
 
 History Log
 ------------------
+    
+- 1.5.0 -- 2020-06-25
+
+    - update dependencies, now automatically import SwiftMailer via composer 
     
 - 1.4.0 -- 2018-06-04
 
